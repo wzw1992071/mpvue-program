@@ -18,6 +18,7 @@
     <div class="createTime">
       下单时间: &nbsp;&nbsp;{{orderTime}}
     </div>
+   
     <!-- 大于3个商品值显示3个其余用查看更多，点击进入订单详情 -->
     <div
       v-if="goods.length > 3"
@@ -70,10 +71,17 @@
       <span class="price">￥{{allMoney}}</span>
       <span class="sub">（不含运费）</span>
     </div>
+    <div class="buttonsArea">
+       <ButtonGroup
+          :buttonList="buttonList"
+        ></ButtonGroup>
+    </div>
   </div>
 </template>
 
 <script>
+import ButtonGroup from '@/components/buttonGroup'
+
 export default {
   name:"OrderItem",
   props: [
@@ -88,6 +96,14 @@ export default {
     "appraise", //订单评价状态
     "shopId", //店铺ID
   ],
+  components: {
+    ButtonGroup,
+  },
+  computed:{
+    buttonList(){
+      return [0,1,2]
+    }
+  },
   data(){
     return  {
       orderMainStatus: {
