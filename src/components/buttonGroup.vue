@@ -31,7 +31,7 @@ export default {
                 fn:function(){
 
                 },
-                className:"defaultBtn"
+                className:"blueBtn"
             },
             {
                 btnName:"取消订单",
@@ -63,9 +63,24 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" scoped>
     .buttonGroup{
         display: flex;
         justify-content: flex-end;
+        margin: 10rpx 0 ;
+        .button{
+           padding: 5rpx;
+           border-radius: 10rpx;
+            margin-left: 20rpx;
+           &.defaultBtn{
+               border: 1rpx solid #ccc;
+               color:  #ccc;
+           }
+           &.blueBtn{
+               border: 1rpx solid rgb(36, 154, 249);
+               color:  rgb(36, 154, 249);
+           }
+
+        }
     }
 </style>
