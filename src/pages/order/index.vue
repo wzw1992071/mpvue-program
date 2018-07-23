@@ -11,17 +11,19 @@
           :key="item.shop_id"
           :order-num="item.order_num"
           :shop-name="item.seller_shop_name"
-          :status="Number(item.main_status)"
-          :payStatus="Number(item.buy_status)"
+          :status="item.main_status"
+          :payStatus="item.buy_status"
           :goods="item.goods_info"
           :appraise="item.appraise"
           :shop-id="item.shop_id"
           :order-time="item.order_time"
-          :other-status="Number(item.other_status)"
-          :all-money="Number(item.all_money)"
+          :other-status="item.other_status"
+          :all-money="item.all_money"
+          :sellerPhone="item.seller_phone"
           ></OrderItem>
         </div>
       </scroll-view>
+      <OrderCarcle></OrderCarcle>
   </div>
 </template>
 
@@ -29,6 +31,7 @@
 import {order} from '@/http/http'
 import HeadTab from '@/components/headTab'
 import OrderItem from '@/components/orderItem'
+import OrderCarcle from '@/components/orderCarcle'
 export default {
   data(){
     return{
@@ -310,7 +313,8 @@ export default {
   },
   components: {
     OrderItem,
-    HeadTab
+    HeadTab,
+    OrderCarcle
   },
   onLoad(){
     wx.showTabBar()

@@ -21,6 +21,7 @@ export default {
       'pages/order/main',//订单
       'pages/oftenBuy/main',//常购
       'pages/me/main',//我的
+      'pages/update/main',//修改订单资料
     ],
     window: {
       backgroundTextStyle: 'light',

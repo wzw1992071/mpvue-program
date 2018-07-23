@@ -72,15 +72,21 @@
       <span class="sub">（不含运费）</span>
     </div>
     <div class="buttonsArea">
-       <ButtonGroup
-          :buttonList="buttonList"
-        ></ButtonGroup>
+       <div class="buttonGroup">
+        <div
+            class="button"  
+            v-for="(item,index) in buttonList" :key="index"
+            :class="buttontype[item.type].className"
+            @click="buttontype[item.type].fn(item)"
+        >
+        {{buttontype[item.type].btnName}}
+    </div>
+  </div>
     </div>
   </div>
 </template>
 
 <script>
-import ButtonGroup from '@/components/buttonGroup'
 
 export default {
   name:"OrderItem",
@@ -95,14 +101,26 @@ export default {
     "otherStatus", //订单子状态
     "appraise", //订单评价状态
     "shopId", //店铺ID
+    "sellerPhone", //店铺电话
   ],
-  components: {
-    ButtonGroup,
-  },
   computed:{
     buttonList(){
-      return [0,1,2]
-    }
+      // return [0,1,2]
+      return [
+        {
+          type:0,
+          phone:this.sellerPhone
+        },
+        {
+          type:1,
+          orderNumber:this.orderNum
+        },
+        {
+          type:2
+        }
+      ]
+    },
+    
   },
   data(){
     return  {
@@ -129,7 +147,49 @@ export default {
         23: '集采-待付款',
         24: '未付款-调货',
         25: '未付款-自行协商'
-      }
+      },
+      buttontype:[
+        {
+            btnName:"联系卖家",
+            fn:function(item){
+                console.log(item)
+                wx.makePhoneCall({
+                    phoneNumber: item.phone //仅为示例，并非真实的电话号码
+                })
+            },
+            className:"defaultBtn"
+        },
+        {
+            btnName:"修改地址",
+            fn:function(item){
+                wx.navigateTo({
+                    url: `/pages/update/main?id=${item.orderNumber}`
+                })
+            },
+            className:"blueBtn"
+        },
+        {
+            btnName:"取消订单",
+            fn:function(){
+                
+            },
+            className:"defaultBtn"
+        },
+        {
+            btnName:"立即支付",
+            fn:function(){
+
+            },
+            className:"defaultBtn"
+        },
+        {
+            btnName:"确认发货",
+            fn:function(){
+
+            },
+            className:"defaultBtn"
+        }
+      ]
     }
   },
   methods:{
@@ -201,7 +261,28 @@ export default {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
-    flex-direction: row;
+    justify-content:space-around;
     
   }
+
+  // 按钮组样式
+  .buttonGroup{
+        display: flex;
+        justify-content: flex-end;
+        margin: 10rpx 0 ;
+        .button{
+           padding: 5rpx;
+           border-radius: 10rpx;
+            margin-left: 20rpx;
+           &.defaultBtn{
+               border: 1rpx solid #ccc;
+               color:  #ccc;
+           }
+           &.blueBtn{
+               border: 1rpx solid rgb(36, 154, 249);
+               color:  rgb(36, 154, 249);
+           }
+
+        }
+    }
 </style>
