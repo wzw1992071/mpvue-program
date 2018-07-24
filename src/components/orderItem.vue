@@ -116,7 +116,8 @@ export default {
           orderNumber:this.orderNum
         },
         {
-          type:2
+          type:2,
+          orderNumber:this.orderNum
         }
       ]
     },
@@ -161,7 +162,7 @@ export default {
         },
         {
             btnName:"修改地址",
-            fn:function(item){
+            fn:item=>{
                 wx.navigateTo({
                     url: `/pages/update/main?id=${item.orderNumber}`
                 })
@@ -170,8 +171,9 @@ export default {
         },
         {
             btnName:"取消订单",
-            fn:function(){
-                
+            fn:item=>{
+                this.$emit("openCarcle",item.orderNumber)
+                // console.log(this)
             },
             className:"defaultBtn"
         },

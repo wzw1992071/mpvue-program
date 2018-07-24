@@ -5,7 +5,7 @@
         :tabInfo="tabInfo" :choiceTab="choiceTab"
         @changeTab="changeTab">
         头部</HeadTab>
-      <scroll-view class="orderBox" scroll-y style="height: 100%" @scrolltolower="loadmore">
+      <scroll-view class="orderBox" scroll-y style="height: 90%" @scrolltolower="loadmore">
         <div class="orderItem" v-for="(item, index) in orderList" :key="index">
           <OrderItem 
           :key="item.shop_id"
@@ -20,10 +20,14 @@
           :other-status="item.other_status"
           :all-money="item.all_money"
           :sellerPhone="item.seller_phone"
+          @openCarcle="openCarcle"
           ></OrderItem>
         </div>
       </scroll-view>
-      <OrderCarcle></OrderCarcle>
+      <OrderCarcle
+        v-if="carcleShow"
+        @commitCarcle="commitCarcle"
+      ></OrderCarcle>
   </div>
 </template>
 
@@ -70,7 +74,11 @@ export default {
           value:4,
           name:"waiting_for_evaluation",
         }
-      ]
+      ],
+      // 是否显示取消订单
+      carcleShow:true,
+      // 取消订单订单号
+      carcleNumber:""
     }
   },
   computed: {
@@ -309,6 +317,16 @@ export default {
           // console.log("请求订单列表错误",err)
       // })
 
+    },
+    // 打开取消订单
+    openCarcle(orderNumber){
+      console.log(11)
+       wx.hideTabBar()
+      this.carcleShow=true;
+    },
+    // 提交取消订单
+    commitCarcle(){
+
     }
   },
   components: {
@@ -317,7 +335,8 @@ export default {
     OrderCarcle
   },
   onLoad(){
-    wx.showTabBar()
+    // wx.showTabBar()
+    wx.hideTabBar()
     this.getData()
   }
 }
