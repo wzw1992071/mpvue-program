@@ -27,6 +27,7 @@
       <OrderCarcle
         v-if="carcleShow"
         @commitCarcle="commitCarcle"
+        @closeCarcle="closeCarcle"
       ></OrderCarcle>
   </div>
 </template>
@@ -76,7 +77,7 @@ export default {
         }
       ],
       // 是否显示取消订单
-      carcleShow:true,
+      carcleShow:false,
       // 取消订单订单号
       carcleNumber:""
     }
@@ -320,13 +321,17 @@ export default {
     },
     // 打开取消订单
     openCarcle(orderNumber){
-      console.log(11)
        wx.hideTabBar()
       this.carcleShow=true;
     },
     // 提交取消订单
     commitCarcle(){
 
+    },
+    // 关闭取消订单
+    closeCarcle(){
+      this.carcleShow=false;
+      wx.showTabBar()
     }
   },
   components: {
@@ -335,8 +340,8 @@ export default {
     OrderCarcle
   },
   onLoad(){
-    // wx.showTabBar()
-    wx.hideTabBar()
+    wx.showTabBar()
+    // wx.hideTabBar()
     this.getData()
   }
 }
