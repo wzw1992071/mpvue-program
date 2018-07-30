@@ -77,9 +77,10 @@
             class="button"  
             v-for="(item,index) in buttonList" :key="index"
             :class="buttontype[item.type].className"
-            @click="buttontype[item.type].fn(item)"
+            @click="handleClick(item)"
         >
         {{buttontype[item.type].btnName}}
+        <!-- @click="buttontype[item.type].fn(item,this)" -->
     </div>
   </div>
     </div>
@@ -87,7 +88,7 @@
 </template>
 
 <script>
-
+import {mapGetters} from 'vuex'
 export default {
   name:"OrderItem",
   props: [
@@ -104,6 +105,7 @@ export default {
     "sellerPhone", //店铺电话
   ],
   computed:{
+    ...mapGetters(['buttontype']),
     buttonList(){
       // return [0,1,2]
       return [
@@ -149,49 +151,7 @@ export default {
         24: '未付款-调货',
         25: '未付款-自行协商'
       },
-      buttontype:[
-        {
-            btnName:"联系卖家",
-            fn:function(item){
-                console.log(item)
-                wx.makePhoneCall({
-                    phoneNumber: item.phone //仅为示例，并非真实的电话号码
-                })
-            },
-            className:"defaultBtn"
-        },
-        {
-            btnName:"修改地址",
-            fn:item=>{
-                wx.navigateTo({
-                    url: `/pages/update/main?id=${item.orderNumber}`
-                })
-            },
-            className:"blueBtn"
-        },
-        {
-            btnName:"取消订单",
-            fn:item=>{
-                this.$emit("openCarcle",item.orderNumber)
-                // console.log(this)
-            },
-            className:"defaultBtn"
-        },
-        {
-            btnName:"立即支付",
-            fn:function(){
-
-            },
-            className:"defaultBtn"
-        },
-        {
-            btnName:"确认发货",
-            fn:function(){
-
-            },
-            className:"defaultBtn"
-        }
-      ]
+   
     }
   },
   methods:{
@@ -201,7 +161,9 @@ export default {
         url: `/pages/shopDetail/main?shopId=${shopId}`
       })
     },
-
+    handleClick(item){
+      this.buttontype[item.type].fn(item,this)
+    },
     goOrderDetail(){
       wx.navigateTo({   
         url: `/pages/orderDetail/main?orderNum=${this.orderNum}`

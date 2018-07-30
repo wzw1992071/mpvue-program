@@ -83,6 +83,7 @@ export default {
     }
   },
   computed: {
+    
   },
   methods: {
     // 切换页签
@@ -321,7 +322,7 @@ export default {
     },
     // 打开取消订单
     openCarcle(orderNumber){
-       wx.hideTabBar()
+      wx.hideTabBar()
       this.carcleShow=true;
     },
     // 提交取消订单

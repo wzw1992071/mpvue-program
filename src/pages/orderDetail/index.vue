@@ -6,7 +6,7 @@
         <div class="status-item">
           <div class="orderLine">
             <div>
-              订单编号: {{orderNo}}
+              订单编号: {{orderNum}}
             </div>
             <div class="copy" @click="copyOrderNo">
               复制编号
@@ -19,54 +19,103 @@
       </div>
       <div class="buttonsArea">
         <div class="buttonGroup">
-         
-        </div>
+          <div
+              class="button"  
+              v-for="(item,index) in buttonList" :key="index"
+              :class="buttontype[item.type].className"
+              @click="handleClick(item)"
+            >
+            {{buttontype[item.type].btnName}}
+          </div>
+          </div>
       </div> 
     </div>
+     <OrderCarcle
+        v-if="carcleShow"
+        @commitCarcle="commitCarcle"
+        @closeCarcle="closeCarcle"
+      ></OrderCarcle>
   </div>
 </template>
 
 <script>
-
+import OrderCarcle from '@/components/orderCarcle'
+import {mapGetters} from 'vuex'
 export default {
   data(){
     return{
-      orderNo:"", // 订单编号
+      orderNum:"", // 订单编号
       firstStatusName: '订单已完成', //订单状态
       order_type: null, // 订单状态
       appraise: null, // 评价状态
       // 订单退款退货状态
       refund_order_type: null,
       orderData: {},
-
+      sellerPhone:"123456789",//卖家电话
+      carcleShow:false, //是否显示
     }
   },
-  computed: {
+   computed:{
+    ...mapGetters(['buttontype']),
+    buttonList(){
+      // return [0,1,2]
+      return [
+        {
+          type:0,
+          phone:this.sellerPhone
+        },
+        {
+          type:1,
+          orderNumber:this.orderNum
+        },
+        {
+          type:2,
+          orderNumber:this.orderNum
+        }
+      ]
+    },
+    
   },
   methods: {
   // 复制到剪切板   
-  copyOrderNo(){
-    let that = this;
-    wx.setClipboardData({
-      data: that.orderNo,
-      success: function(res) {
-        wx.getClipboardData({
-          success: function(res) {
-            wx.showToast({
-              title: '复制成功',
-              icon: 'success',
-              duration: 500
-            })
-          }
-        })
-      }
-    })
-   },
-   
+    copyOrderNo(){
+      let that = this;
+      wx.setClipboardData({
+        data: that.orderNum,
+        success: function(res) {
+          wx.getClipboardData({
+            success: function(res) {
+              wx.showToast({
+                title: '复制成功',
+                icon: 'success',
+                duration: 500
+              })
+            }
+          })
+        }
+      })
+    },
+    handleClick(item){
+      this.buttontype[item.type].fn(item,this)
+    },
+    openCarcle(){
+      wx.hideTabBar()
+      this.carcleShow=true;
+    },
+    commitCarcle(){
+
+    },
+    closeCarcle(){
+      this.carcleShow=false;
+      wx.showTabBar()
+    }
+  },
+  components: {
+    OrderCarcle
   },
   onLoad(option){
     wx.hideTabBar()
-    this.orderNo = option.orderNum
+    this.orderNum = option.orderNum
     
   }
 }
@@ -93,11 +142,9 @@ export default {
         }
       }
     }
-    .orderLine{
-     
+    .orderLine{  
       display: flex;
       justify-content: space-around;
-      
       .copy{
         width: 150rpx;
         height: 50rpx;
@@ -107,6 +154,10 @@ export default {
         text-align: center;
         color: #999;
       }
+    }
+    .buttonsArea{
+      position:absolute;
+      bottom:0;
     }
   }
  
