@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/login/main",
+    "pages/index/main",
+    "pages/me/main",
+    "pages/oftenBuy/main",
+    "pages/order/main",
+    "pages/orderDetail/main",
+    "pages/shopCar/main",
+    "pages/shopDetail/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "找冻品网",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "color": "#8A8A8A",
+    "selectedColor": "#3c91f4",
+    "list": [
+      {
+        "pagePath": "pages/index/main",
+        "text": "首页",
+        "iconPath": "/static/images/shouye.png",
+        "selectedIconPath": "/static/images/shouyeSelect.png"
+      },
+      {
+        "pagePath": "pages/shopCar/main",
+        "text": "购物车",
+        "iconPath": "/static/images/shopCar.png",
+        "selectedIconPath": "/static/images/shopCarSelect.png"
+      },
+      {
+        "pagePath": "pages/order/main",
+        "text": "订单",
+        "iconPath": "/static/images/order.png",
+        "selectedIconPath": "/static/images/orderSelect.png"
+      },
+      {
+        "pagePath": "pages/oftenBuy/main",
+        "text": "常购",
+        "iconPath": "/static/images/often.png",
+        "selectedIconPath": "/static/images/oftenSelect.png"
+      },
+      {
+        "pagePath": "pages/me/main",
+        "text": "我的",
+        "iconPath": "/static/images/me.png",
+        "selectedIconPath": "/static/images/meSelect.png"
+      }
+    ]
+  }
+}

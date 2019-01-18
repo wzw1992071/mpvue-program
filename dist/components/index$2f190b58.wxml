@@ -1,0 +1,5 @@
+<template name="index$2f190b58">
+  <view class="_div data-v-62ce8b92 mainBox"> 购物车页面
+    <view bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_div data-v-62ce8b92">去首页</view>
+  </view>
+</template>

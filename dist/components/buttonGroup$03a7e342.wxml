@@ -1,0 +1,5 @@
+<template name="buttonGroup$03a7e342">
+  <view class="_div data-v-778e287a buttonGroup">
+    <view class="_div data-v-778e287a button" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" wx:for="{{buttonList}}" wx:for-index="index" wx:for-item="item"> {{buttontype[item].btnName}} </view>
+  </view>
+</template>

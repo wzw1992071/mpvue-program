@@ -1,0 +1,7 @@
+<template name="headTab$4e9652f2">
+  <view class="_div data-v-587005eb">
+    <view class="_ul data-v-587005eb tabBox">
+      <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" wx:for="{{tabInfo}}" wx:for-index="index" wx:for-item="item" class="_li data-v-587005eb {{[index == choiceTab ? 'active' : '']}}">{{item.title}}</view>
+    </view>
+  </view>
+</template>

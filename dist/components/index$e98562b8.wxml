@@ -1,0 +1,12 @@
+<import src="headTab$4e9652f2" />
+<import src="orderItem$587fb81a" />
+<template name="index$e98562b8">
+  <view class="_div data-v-66132c07 mainBox">
+    <template bindchangeTab="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root, $slotdefault:'data-v-66132c07-default-0'}}" is="headTab$4e9652f2"></template>
+    <scroll-view class="_scroll-view data-v-66132c07 orderBox" scroll-y style="height: 100%" bindscrolltolower="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+      <view class="_div data-v-66132c07 orderItem" wx:key="index" key="{{index}}" wx:for="{{orderList}}" wx:for-index="index" wx:for-item="item">
+        <template data="{{...$root[$kk+'1-'+index], $root}}" is="orderItem$587fb81a"></template>
+      </view>
+    </scroll-view>
+  </view>
+</template>
