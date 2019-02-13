@@ -1,0 +1,5 @@
+<template name="7a0b8d9d">
+  <view class="_div data-v-259c2844"><button wx:if="{{showBtn}}" open-type="getUserInfo" bindgetuserinfo="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_button data-v-259c2844">点击授权</button>
+    <view bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_div data-v-259c2844">去首页</view>
+  </view>
+</template>

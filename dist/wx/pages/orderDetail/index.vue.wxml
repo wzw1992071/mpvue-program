@@ -1,0 +1,25 @@
+<import src="/components/orderCarcle.vue.wxml" /><template name="f5f7c11a">
+  <view class="_div data-v-319c26b4 mainBox">
+    <view class="_div data-v-319c26b4 body-content">
+      <view class="_div data-v-319c26b4 top-status">
+        <view class="_div data-v-319c26b4 status-item">
+          <view class="_div data-v-319c26b4 orderLine">
+            <view class="_div data-v-319c26b4"> 订单编号: {{orderNum}}
+            </view>
+            <view class="_div data-v-319c26b4 copy" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"> 复制编号 </view>
+          </view>
+          <view class="_div data-v-319c26b4">
+            {{firstStatusName}}
+          </view>
+        </view>
+      </view>
+      <view class="_div data-v-319c26b4 buttonsArea">
+        <view class="_div data-v-319c26b4 buttonGroup">
+          <view class="_div data-v-319c26b4 button {{buttontype[item.type].className}}" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'1_'+index}}" data-comkey="{{$k}}" wx:for="{{buttonList}}" wx:for-index="index" wx:for-item="item">
+            {{buttontype[item.type].btnName}}
+          </view>
+        </view>
+      </view>
+    </view> <template wx:if="{{carcleShow}}" bindcommitCarcle="handleProxy" bindcloseCarcle="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root}}" is="74c62b4a"></template>
+  </view>
+</template>

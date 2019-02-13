@@ -1,0 +1,9 @@
+<import src="/components/headTab.vue.wxml" />
+<import src="/components/orderItem.vue.wxml" />
+<import src="/components/orderCarcle.vue.wxml" /><template name="d30b697c">
+  <view class="_div data-v-09a0a983 mainBox"><template bindchangeTab="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'0'], $root, $for:{default:'data-v-09a0a983-default-0'},$slotdefault:'data-v-09a0a983-default-0'}}" is="35176da9"></template>
+    <scroll-view class="_scroll-view data-v-09a0a983 orderBox" scroll-y style="height: 90%" bindscrolltolower="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+      <view class="_div data-v-09a0a983 orderItem" wx:key="index" key="{{index}}" wx:for="{{orderList}}" wx:for-index="index" wx:for-item="item"><template bindopenCarcle="handleProxy" data-eventid="{{'1_'+index}}" data-comkey="{{$k}}" data="{{...$root[$kk+'1_'+index], $root}}" is="bc4d0ad6"></template></view>
+    </scroll-view> <template wx:if="{{carcleShow}}" bindcommitCarcle="handleProxy" bindcloseCarcle="handleProxy" data-eventid="{{'3'}}" data-comkey="{{$k}}" data="{{...$root[$kk+'2'], $root}}" is="74c62b4a"></template>
+  </view>
+</template>

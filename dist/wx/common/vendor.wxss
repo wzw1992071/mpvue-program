@@ -1,0 +1,88 @@
+
+.orderCarcle {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+.orderCarcle .popup-cancel-order-content {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 60%;
+  background-color: #fff;
+}
+.orderCarcle .popup-cancel-order-content .title {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2rpx solid #e9e9e9;
+  font-size: 32rpx;
+  color: #333;
+  height: 80rpx;
+}
+.orderCarcle .popup-cancel-order-content .cancel-reason {
+  padding: 0 20rpx;
+}
+.orderCarcle .popup-cancel-order-content .cancel-reason .hint {
+  font-size: 32rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #666666;
+}
+.orderCarcle .popup-cancel-order-content .cancel-reason .cancel-reason-items {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  font-size: 28rpx;
+}
+.orderCarcle .popup-cancel-order-content .cancel-reason .cancel-reason-items .reasonBox {
+  width: 33%;
+  display: flex;
+  margin-top: 20rpx;
+}
+.orderCarcle .popup-cancel-order-content .cancel-reason .cancel-reason-items .reasonBox .reasonRadio {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 8rpx;
+  border-radius: 18rpx;
+  border: 2rpx solid #999999;
+}
+.orderCarcle .popup-cancel-order-content .cancel-reason .cancel-reason-items .reasonBox .reasonRadio.active {
+  background-color: #fd4b4d;
+  border-color: #fd4b4d;
+}
+.orderCarcle .popup-cancel-order-content .cancel-reason .moreReason {
+  margin-top: 20rpx;
+}
+.orderCarcle .popup-cancel-order-content .cancel-reason .moreReason ._textarea {
+  font-size: 32rpx;
+  width: 90%;
+  padding-top: 20rpx;
+  padding-left: 5%;
+  padding-right: 5%;
+  height: 200rpx;
+  background: #eee;
+}
+.orderCarcle .popup-cancel-order-content .buttons {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  border-top: 2rpx solid #efefef;
+}
+.orderCarcle .popup-cancel-order-content .buttons ._div {
+  width: 50%;
+  text-align: center;
+  line-height: 100rpx;
+  height: 100rpx;
+}
+.orderCarcle .popup-cancel-order-content .buttons ._div.sure {
+  color: #fff;
+  background-color: #fd4b4d;
+}

@@ -1,0 +1,51 @@
+<template name="bc4d0ad6">
+  <view class="_div data-v-1fcacb5b item">
+    <view class="_div data-v-1fcacb5b title">
+      <view class="_div data-v-1fcacb5b shopName" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"><label class="_span data-v-1fcacb5b iconfont icon-mendian"></label>
+        <view class="_p data-v-1fcacb5b">{{shopName}}</view>
+      </view>
+      <view class="_div data-v-1fcacb5b"><label class="_span data-v-1fcacb5b icon iconfont icon-jiantou"></label></view>
+      <view class="_div data-v-1fcacb5b status">
+        <view wx:if="{{otherStatus !== 24 && otherStatus !== 25}}" class="_div data-v-1fcacb5b status">{{orderMainStatus[status]}}</view>
+        <view class="_div data-v-1fcacb5b action">{{otherOtherStatus[otherStatus]}}</view>
+      </view>
+    </view>
+    <view class="_div data-v-1fcacb5b createTime"> 下单时间:   {{orderTime}}
+    </view>
+    <view wx:if="{{goods.length > 3}}" class="_div data-v-1fcacb5b show-more" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+      <view wx:key="idx" key="{{idx}}" wx:for="{{goods}}" wx:for-index="idx" wx:for-item="item" class="_div data-v-1fcacb5b">
+        <view wx:if="{{idx < 3}}" class="_div data-v-1fcacb5b goods">
+          <view class="_div data-v-1fcacb5b thumb"></view>
+          <view class="_div data-v-1fcacb5b info">{{item.goods_name}}</view>
+          <view class="_div data-v-1fcacb5b data">
+            <view class="_div data-v-1fcacb5b price">￥{{item.unit_price}}</view>
+            <view class="_div data-v-1fcacb5b numbers">×{{item.num}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="_div data-v-1fcacb5b showMoreOrder">
+        <view class="_div data-v-1fcacb5b show-more-text">查看更多</view> <label class="_span data-v-1fcacb5b icon iconfont icon-jiantou"></label>
+      </view>
+    </view>
+    <view wx:if="{{goods.length < 3}}" class="_div data-v-1fcacb5b show-more" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}">
+      <view wx:key="idx" key="{{idx}}" wx:for="{{goods}}" wx:for-index="idx" wx:for-item="item" class="_div data-v-1fcacb5b">
+        <view class="_div data-v-1fcacb5b goods">
+          <view class="_div data-v-1fcacb5b thumb"></view>
+          <view class="_div data-v-1fcacb5b info">{{item.goods_name}}</view>
+          <view class="_div data-v-1fcacb5b data">
+            <view class="_div data-v-1fcacb5b price">￥{{item.unit_price}}</view>
+            <view class="_div data-v-1fcacb5b numbers">×{{item.num}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-1fcacb5b statistics-bar"><label class="_span data-v-1fcacb5b">共{{goods.length}}种商品 合计:</label> <label class="_span data-v-1fcacb5b price">￥{{allMoney}}</label> <label class="_span data-v-1fcacb5b sub">（不含运费）</label></view>
+    <view class="_div data-v-1fcacb5b buttonsArea">
+      <view class="_div data-v-1fcacb5b buttonGroup">
+        <view class="_div data-v-1fcacb5b button {{buttontype[item.type].className}}" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'3_'+index}}" data-comkey="{{$k}}" wx:for="{{buttonList}}" wx:for-index="index" wx:for-item="item">
+          {{buttontype[item.type].btnName}}
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

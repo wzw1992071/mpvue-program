@@ -1,0 +1,12 @@
+@import "../../common/vendor.wxss";
+
+.mainBox.data-v-373d93f2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.mainBox .title.data-v-373d93f2 {
+  color: red;
+}

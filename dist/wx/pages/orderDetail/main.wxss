@@ -1,0 +1,40 @@
+@import "../../common/vendor.wxss";
+
+.body-content.data-v-319c26b4 {
+  background: #eee;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.body-content .status-item.data-v-319c26b4 {
+  height: 100rpx;
+  padding: 40rpx 10rpx;
+  background: #fff;
+  font-size: 32rpx;
+}
+.body-content .status-item > ._div.data-v-319c26b4 {
+  margin-bottom: 20rpx;
+}
+.body-content .status-item > ._div.data-v-319c26b4:nth-of-type(2) {
+  color: #ff0000;
+  padding: 0 10rpx;
+}
+.body-content .orderLine.data-v-319c26b4 {
+  display: flex;
+  justify-content: space-around;
+}
+.body-content .orderLine .copy.data-v-319c26b4 {
+  width: 150rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border: 1rpx solid #999;
+  border-radius: 10rpx;
+  text-align: center;
+  color: #999;
+}
+.body-content .buttonsArea.data-v-319c26b4 {
+  position: absolute;
+  bottom: 0;
+}

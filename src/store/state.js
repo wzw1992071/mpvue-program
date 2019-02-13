@@ -32,9 +32,6 @@ const state = {
                 catch(err) {
                     that.$emit("openCarcle",item.orderNumber);
                 }
-                // that.$emit("openCarcle",item.orderNumber);
-                
-                // console.log(this)
             },
             className:"defaultBtn"
         },

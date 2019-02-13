@@ -1,0 +1,4 @@
+<import src="/components/orderCarcle.vue.wxml" />
+<import src="/components/headTab.vue.wxml" />
+<import src="/components/orderItem.vue.wxml" />
+<import src="/components/orderCarcle.vue.wxml" /><template name="data-v-09a0a983-default-0"> 头部</template>

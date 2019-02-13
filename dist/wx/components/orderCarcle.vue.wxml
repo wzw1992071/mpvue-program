@@ -1,0 +1,13 @@
+<template name="74c62b4a">
+  <view class="_div data-v-3ba66290 orderCarcle">
+    <view class="_div data-v-3ba66290 popup-cancel-order-content">
+      <view class="_div data-v-3ba66290 title">取消订单</view>
+      <view class="_div data-v-3ba66290 cancel-reason">
+        <view class="_div data-v-3ba66290 hint">取消原因</view>
+        <view class="_div data-v-3ba66290 cancel-reason-items">
+          <view class="_div data-v-3ba66290 reasonBox" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'0_'+index}}" data-comkey="{{$k}}" wx:for="{{reason}}" wx:for-index="index" wx:for-item="item">
+            <view class="_div data-v-3ba66290 reasonRadio {{[chioceReason == item.num ? 'active' : '']}}"></view>
+            <view class="_div data-v-3ba66290 reasonText">{{item.name}}</view>
+          </view>
+        </view>
+        <view class="_div data-v-3ba66290 moreReason"><textarea value="{{moreReason}}" bindinput="handleProxy" cols="30" rows="10" maxlength="30" placeholder="补充说明（限30个字）" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_textarea data-v-3ba66290" /></view> <view class="_div data-v-3ba66290 hint">您确定要取消订单吗？订单取消后，不可恢复。</view></view> <view class="_div data-v-3ba66290 buttons"><view bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_div data-v-3ba66290">关闭</view> <view class="_div data-v-3ba66290 sure">确认取消</view></view></view></view></template>

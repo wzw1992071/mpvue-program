@@ -1,0 +1,99 @@
+@import "../../common/vendor.wxss";
+
+.mainBox.data-v-09a0a983 {
+  background: #f5f5f5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.mainBox .title.data-v-09a0a983 {
+  height: 5%;
+}
+.mainBox .orderBox.data-v-09a0a983 {
+  background: #f5f5f5;
+}
+.mainBox .orderBox .orderItem.data-v-09a0a983 {
+  background: #fff;
+}
+.tabBox {
+  font-size: 30rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #eee;
+}
+.tabBox ._li {
+  width: 150rpx;
+  text-align: center;
+}
+.tabBox .active {
+  color: #249af9;
+  border-bottom: 2rpx solid #249af9;
+}
+.item.data-v-1fcacb5b {
+  font-size: 30rpx;
+  margin: 30rpx;
+  margin-top: 0;
+  padding: 10rpx 0;
+}
+.item .title.data-v-1fcacb5b {
+  display: flex;
+  justify-content: space-between;
+  margin: 30rpx 0rpx;
+}
+.item .title .shopName.data-v-1fcacb5b {
+  display: flex;
+}
+.item .title .shopName > ._span.data-v-1fcacb5b {
+  font-size: 36rpx;
+  margin-right: 15rpx;
+}
+.item .createTime.data-v-1fcacb5b {
+  margin: 10rpx 0;
+}
+.item .status.data-v-1fcacb5b {
+  text-align: right;
+}
+.item .show-more .showMoreOrder.data-v-1fcacb5b {
+  display: flex;
+  justify-content: flex-end;
+}
+.item .statistics-bar.data-v-1fcacb5b {
+  text-align: right;
+}
+.goods.data-v-1fcacb5b {
+  width: calc(100% - 100rpx);
+  height: 150rpx;
+  padding: 50rpx;
+  margin-bottom: 30rpx;
+  background-color: #f5f5f5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  justify-content: space-around;
+}
+.buttonGroup.data-v-1fcacb5b {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10rpx 0;
+}
+.buttonGroup .button.data-v-1fcacb5b {
+  padding: 5rpx;
+  border-radius: 10rpx;
+  margin-left: 20rpx;
+}
+.buttonGroup .button.defaultBtn.data-v-1fcacb5b {
+  border: 1rpx solid #ccc;
+  color: #ccc;
+}
+.buttonGroup .button.blueBtn.data-v-1fcacb5b {
+  border: 1rpx solid #249af9;
+  color: #249af9;
+}
